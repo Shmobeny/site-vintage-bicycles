@@ -1,0 +1,284 @@
+@media (max-width: 1600px) {
+  $container-basic-size: 100%;
+  $container-small-size: $container-basic-size - $container-basic-size / 3;
+  $container-tiny-size: $container-basic-size / 3;
+
+  .container {
+    width: $container-basic-size;
+  }
+
+  .container.smaller {
+    width: $container-small-size;
+  }
+
+  .container.tiny {
+    width: $container-tiny-size;
+  }
+
+  .shop {
+    &__button {
+      > a {
+        width: $container-tiny-size;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  $container-small-size: 90%;
+  $container-tiny-size: $container-small-size / 2;
+
+  .container.smaller {
+    width: $container-small-size;
+  }
+
+  .container.tiny {
+    width: $container-tiny-size;
+  }
+
+  .works {
+    .bike-3 &__column:last-of-type {
+      display: none;
+    }
+  }
+
+  .shop {
+
+    .container {
+      grid-template-columns: 1fr $container-tiny-size 1fr;
+      grid-template-rows: repeat(4, 230px) 150px;
+    }
+    
+    .item-1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+  
+    .item-2 {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+  
+    .item-3 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  
+    .item-4 {
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+  
+    .item-5 {
+      grid-column: 1 / 2;
+      grid-row: 3 / 5;
+    }
+
+    .item-6 {
+      grid-column: 2 / 4;
+      grid-row: 3 / 4;
+    }
+  
+    .item-7 {
+      grid-column: 2 / 3;
+      grid-row: 4 / 5;
+    }
+  
+    .item-8 {
+      grid-column: 3 / 4;
+      grid-row: 4 / 5;
+    }
+
+    &__button {
+      grid-column: 1 / 4;
+      grid-row: 5 / 6;
+
+      > a {
+        width: $container-tiny-size;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .works {
+
+    &__row {
+      justify-content: flex-start;
+      position: relative;
+
+      &:nth-of-type(2) {
+        justify-content: flex-end;
+      }
+    }
+
+    &__column {
+      &:first-of-type {
+        position: absolute;
+        width: 215px;
+        height: calc(100% - 200px);
+      }
+
+      &--with-text {
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+
+    .text-block {
+      margin-left: 215px;
+    }
+
+    .bike-2 {
+
+      .works__column:first-of-type {
+        left: calc(100% - 215px);
+      }
+
+      .text-block {
+        margin-left: 0;
+        margin-right: 215px;
+      }
+    }
+  }
+
+  .footer {
+
+    &__copyright {
+      a {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  $container-tiny-size: 80%;
+
+  .container.tiny {
+    width: $container-tiny-size;
+  }
+
+  header {
+    nav {
+      margin-top: 0;
+    }
+
+    .main-nav {
+      display: none;
+    }
+
+    .burger-nav {
+      display: flex;
+    }
+  }
+
+  .works {
+    
+    &__column {
+      min-width: 100%;
+
+      &:first-of-type {
+        display: none;
+      }
+
+    }
+
+    .text-block {
+      height: auto;
+      min-height: unset;
+    }
+
+    .text-block,
+    .bike-2 .text-block {
+      margin: 0;
+    }
+  }
+
+  .shop {
+
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 150px) 150px;
+    }
+    
+    .item-1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+  
+    .item-2 {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+  
+    .item-3 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    .item-4 {
+      grid-column: 1 / 2;
+      grid-row: 3 / 5;
+    }
+
+    .item-5 {
+      grid-column: 2 / 3;
+      grid-row: 3 / 5;
+    }
+
+    .item-6 {
+      grid-column: 1 / 3;
+      grid-row: 5 / 6;
+    }
+  
+    .item-7 {
+      grid-column: 1 / 2;
+      grid-row: 6 / 7;
+    }
+  
+    .item-8 {
+      grid-column: 2 / 2;
+      grid-row: 6 / 7;
+    }
+
+    &__button {
+      grid-column: 1 / 4;
+      grid-row: 7 / 8;
+
+      > a {
+        width: $container-tiny-size;
+      }
+    }
+
+  }
+
+  .subscribe-field {
+    &__form {
+      flex-direction: column;
+    }
+
+    &__submit {
+      margin: 5px 0 0 0;
+    }
+  }
+
+  .footer {
+
+    .container {
+      flex-direction: column;
+    }
+
+    &__contacts,
+    &__socials,
+    &__copyright {
+      flex-basis: auto;
+      align-items: center;
+      text-align: center;
+    }
+
+    &__socials {
+      margin: 35px 0;
+    }
+  }
+}

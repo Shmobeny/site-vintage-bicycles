@@ -1,0 +1,46 @@
+// Reset default styles
+
+html, body,
+h1, h2, h3, h4, h5, h6, p,
+ul, ol,
+figure, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+*::before, *::after {
+  box-sizing: border-box;
+} 
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+p,
+figcaption, blockquote, figure,
+h1, h2, h3, h4, h5, h6 {
+  max-width: 100%;
+}
+
+p {
+  max-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.hide {
+  display: none;
+}

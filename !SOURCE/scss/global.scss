@@ -1,0 +1,82 @@
+// Global styles and variables
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+$font-color: #848789;
+$font-size: 16px;
+$title-color: #353738;
+$title-size: 18px;
+$link-color: #4d4959;
+
+$active-color: #64c29e;
+
+$bg-color-main: #ffffff;
+$bg-color-alt: #f7f7f7;
+$bg-color-alt-dark: #282f35;
+
+$site-part-size: 470px;
+
+$container-basic-size: 1600px;
+$container-small-size: $container-basic-size - $container-basic-size / 3;
+$container-tiny-size: $container-basic-size / 3;
+
+body {
+  display: flex;
+  flex-direction: column;
+  color: $font-color;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Hind', sans-serif;
+  font-family: 'Lato', sans-serif;
+  line-height: 34px;
+  background-color: $bg-color-main
+}
+
+.container {
+  display: block;
+  width: $container-basic-size;
+  margin: 0 auto;
+}
+
+.container.smaller {
+  width: $container-small-size;
+}
+
+.container.tiny {
+  width: $container-tiny-size;
+}
+
+@mixin bold-text {
+  color: $title-color;
+  font-size: $title-size;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@mixin total-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin section-size {
+  padding: 6.291% 0;
+}
+
+@mixin animate($property: all, $duration: 300ms, $cubic: ease-in-out, $delay: 0ms) {
+  transition: $property $duration $cubic $delay;
+}
+
+.text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+
+  &__title {
+    margin: 30px 0;
+    @include bold-text;
+  }
+}
