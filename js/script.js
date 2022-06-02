@@ -1,7 +1,10 @@
-let burger = document.getElementsByClassName('burger-nav__burger');
-let menu = document.getElementsByClassName('burger-nav__menu');
+let burger = document.querySelector('.burger-nav__burger');
+let menu = document.querySelector('.burger-nav__menu');
 
 function toggleClass() {
-  burger[0].classList.toggle('active');
-  menu[0].classList.toggle('active');
+  console.log("test")
+  burger.classList.toggle('active');
+  menu.classList.toggle('active');
 }
+
+burger.onclick = toggleClass;
